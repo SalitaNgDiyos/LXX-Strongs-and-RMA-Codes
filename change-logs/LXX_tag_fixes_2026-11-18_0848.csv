@@ -1,0 +1,15 @@
+﻿Module,Verse,Before,After
+LXX_Brenton+,Exod 12:9,"ὠμὸν<WG5606><WTN-ASM l=""ὦμος"">","ὠμὸν<WG13149><WTA-ASN l=""ὠμός"">"
+LXX_Brenton+,Exod 12:9,"ἡψημένον<WG1530><WTV-AMP-ASN l=""εἰσπηδάω"">","ἡψημένον<WG5952><WTV-RMP-ASN l=""ἕψω"">"
+LXX_Brenton+,Josh 9:4,"ὤμων<WG3688><WTN-GSM l=""ὄνος"">","ὤμων<WG5606><WTN-GPM l=""ὦμος"">"
+LXX_Brenton+,properties,version.minor=7,version.minor=8
+LXX_Brenton+,properties,version.date=2026-10-23,version.date=2026-11-18
+SweteLXX+,Exod 12:9,"ὠμὸν<WG5606><WTN-ASM l=""ὦμος"">","ὠμὸν<WG13149><WTA-ASN l=""ὠμός"">"
+SweteLXX+,Exod 12:9,"ἡψημένον<WG1530><WTV-RMP-ASM l=""εἰσπηδάω"">","ἡψημένον<WG5952><WTV-RMP-ASN l=""ἕψω"">"
+SweteLXX+,Josh 9:4,"ὤμων<WG3688><WTN-GSM l=""ὄνος"">","ὤμων<WG5606><WTN-GPM l=""ὦμος"">"
+SweteLXX+,properties,version.minor=8,version.minor=9
+SweteLXX+,properties,version.date=2026-10-23,version.date=2026-11-18
+LXX_Rahlfs+,Exod 12:9,"<wt>ὠμὸν<WG5606><WTN2-ASM l=""ὦμος"">","<wt>ὠμὸν<WG13149><WTA1-ASN l=""ὠμός"">"
+LXX_Rahlfs+,Exod 12:9,"<wt>ἡψημένον<WG5952><WTVA-AMPASN l=""ἕψω"">","<wt>ἡψημένον<WG5952><WTVA-XMPASN l=""ἕψω"">"
+LXX_Rahlfs+,properties,version.minor=9,version.minor=10
+LXX_Rahlfs+,properties,version.date=2026-10-25,version.date=2026-11-18
