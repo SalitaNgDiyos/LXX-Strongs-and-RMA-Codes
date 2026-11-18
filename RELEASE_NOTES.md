@@ -1,6 +1,8 @@
-Lemma fixes in LXX Brenton+ and SweteLXX+. Only the two files below were updated; LXX Rahlfs+ already had these right.
+Tag fixes for ἠλεημένη / ἠλεημένην (ἐλεέω, G1653, "one who has been shown mercy"), the perfect passive participle:
 
-- **1 Kgs 6:23 (3 Kgdms 6:23) ἐσταθμωμένον** now has G13027 σταθμόω (it was G4714 στάσις)
-- **Esth 1:6 διηνθισμέναι** now has G13066 διανθίζω (it was G1270 διανόημα)
+- **SweteLXX+:** 2 words (Hos 1:6 and 1:8 area, lines 22101 and 22103) were tagged as active present participles (V-PAP); they are now V-RPP (perfect passive).
+- **LXX Brenton+:** ἠλεημένην had the nominative case (NSF); it is accusative (ASF).
+
+Only the two files below were updated.
 
 Use with the Greek Bible Lexicon dictionary (https://github.com/SalitaNgDiyos/Greek-Bible-Lexicon).
