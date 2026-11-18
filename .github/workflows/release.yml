@@ -1,13 +1,10 @@
 name: Release LXX modules
 
-# One release series per module (Brenton, Swete, Rahlfs). A release is made for a module
-# only when a new dated zip for that module has been added; unchanged modules get nothing.
 on:
   push:
     branches: [master]
     paths:
-      - 'modules/**/*.zip'
-      - 'release-notes/*.md'
+      - 'modules/*.ot'
   workflow_dispatch:
 
 permissions:
@@ -18,22 +15,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Remove the earlier combined release (one-time)
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh release delete 2026-11-18_0848 --cleanup-tag --yes || true
-      - name: Create a release for each module whose file is new
+        with:
+          fetch-depth: 2
+      - name: Release the module files that were updated
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          for M in Brenton Swete Rahlfs; do
-            FILE=$(ls modules/$M/*.zip 2>/dev/null | sort | tail -n 1)
-            [ -n "$FILE" ] || continue
-            NAME=$(basename "$FILE" .zip)
-            TAG="${M}_$(echo "$NAME" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}_[0-9]{4}$')"
-            if gh release view "$TAG" >/dev/null 2>&1; then
-              echo "$TAG already exists"; continue
-            fi
-            gh release create "$TAG" "$FILE" --title "$NAME" \
-              --notes-file "release-notes/$M.md" --target "$GITHUB_SHA"
-          done
+          # Files added or changed in this push (the newest commit); on a manual run, the newest dated file of each module
+          CHANGED=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'modules/*.ot')
+          if [ -z "$CHANGED" ]; then
+            for P in LXX_Brenton SweteLXX LXX_Rahlfs; do
+              F=$(ls modules/${P}_*.ot 2>/dev/null | sort | tail -n 1); [ -n "$F" ] && CHANGED="$CHANGED"$'\n'"$F"
+            done
+          fi
+          # tag = newest date-time found in the file names
+          TAG=$(echo "$CHANGED" | sed -nE 's#.*_([0-9]{4}-[0-9]{2}-[0-9]{2}_[0-9]{4})\.ot$#\1#p' | sort | tail -n 1)
+          FILES=$(echo "$CHANGED" | grep "_${TAG}\.ot$")
+          echo "Tag: $TAG"; echo "Files:"; echo "$FILES"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release delete "$TAG" --yes --cleanup-tag
+          fi
+          gh release create "$TAG" $FILES \
+            --title "LXX-Modules_$TAG" \
+            --notes-file RELEASE_NOTES.md \
+            --target "$GITHUB_SHA"
