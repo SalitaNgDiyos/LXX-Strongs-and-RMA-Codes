@@ -5,6 +5,7 @@ on:
     branches: [master]
     paths:
       - 'modules/*.ot'
+      - 'modules/*.dct.twm'
   workflow_dispatch:
 
 permissions:
@@ -22,15 +23,15 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           # Files added or changed in this push (the newest commit); on a manual run, the newest dated file of each module
-          CHANGED=$(git diff --name-only --diff-filter=AMR HEAD~1 HEAD -- 'modules/*.ot')
+          CHANGED=$(git diff --name-only --diff-filter=AMR HEAD~1 HEAD -- 'modules/*.ot' 'modules/*.dct.twm')
           if [ -z "$CHANGED" ]; then
-            for P in LXX_Brenton SweteLXX LXX_Rahlfs; do
-              F=$(ls modules/${P}_*.ot 2>/dev/null | sort | tail -n 1); [ -n "$F" ] && CHANGED="$CHANGED"$'\n'"$F"
+            for P in LXX_Brenton SweteLXX LXX_Rahlfs Packard_s_and_Robinson_s_Morphological_Analysis_Codes_dct; do
+              F=$(ls modules/${P}_*.ot modules/${P}_*.dct.twm 2>/dev/null | sort | tail -n 1); [ -n "$F" ] && CHANGED="$CHANGED"$'\n'"$F"
             done
           fi
           # tag = newest date-time found in the file names
-          TAG=$(echo "$CHANGED" | sed -nE 's#.*_([0-9]{4}-[0-9]{2}-[0-9]{2}_[0-9]{4})\.ot$#\1#p' | sort | tail -n 1)
-          FILES=$(echo "$CHANGED" | grep "_${TAG}\.ot$")
+          TAG=$(echo "$CHANGED" | sed -nE 's#.*_([0-9]{4}-[0-9]{2}-[0-9]{2}_[0-9]{4})\.(ot|dct\.twm)$#\1#p' | sort | tail -n 1)
+          FILES=$(echo "$CHANGED" | grep -E "_${TAG}\.(ot|dct\.twm)$")
           echo "Tag: $TAG"; echo "Files:"; echo "$FILES"
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release delete "$TAG" --yes --cleanup-tag
