@@ -1,8 +1,13 @@
-Tag fixes for ἠλεημένη / ἠλεημένην (ἐλεέω, G1653, "one who has been shown mercy"), the perfect passive participle:
+Full Strong's and lemma audit & repair across **LXX Brenton+**, **SweteLXX+**, and **LXX Rahlfs+** (`1,720` canonical `.ot` token fixes total):
 
-- **SweteLXX+:** 2 words (Hos 1:6 and 1:8 area, lines 22101 and 22103) were tagged as active present participles (V-PAP); they are now V-RPP (perfect passive).
-- **LXX Brenton+:** ἠλεημένην had the nominative case (NSF); it is accusative (ASF).
-
-Only the two files below were updated.
+- **LXX Brenton+ (`806` fixes):**
+  - Fixed `56` Brenton-specific homophone, itacism, and homograph mistags (`Exod 14:28 κατελήφθη` `G2638 καταλαμβάνω` → `G2641 καταλείπω`; `6x ὄψει` `G3799 ὄψις` → `G3700 ὁράω`; `2x βούλῃ` `G1012 βουλή` → `G1014 βούλομαι`; `2x ψυχῶν` `G5594 ψύχω` → `G5590 ψυχή`; `2x ὠδὰς/ᾨΔΗΣ` `G3592 ὅδε` → `G5603 ᾠδή`; `3x μετῇρεν/μετῇρας/μέταιρε` `G3349 μετεωρίζω` → `G3332 μεταίρω`; `3x ἐκκλίνῃ/ἔκλινον` `G2827 κλίνω` → `G1578 ἐκκλίνω`; `Job 13:11 δῖνα` `G5989 Δινα` → `G1171 δεινός`; `Ezek 27:9 βιβλίων` `G975 βιβλίον` → `G13104 Βύβλιοι`; `2 Chr 35:13 ὕψησαν` `G7585 ὀπτάω` → `G5952 ἕψω`; `Ezek 23:4 ἦν` `G3588 ὁ` → `G2258 εἰμί`; `Amos 6:10 παραβιῶνται` `G3859 παραδιατριβή` → `G3849 παραβιάζομαι`; plus `147x Οὐχὶ` `G3364` → `G3780 οὐχί`).
+- **LXX Brenton+ & SweteLXX+ (`182` shared legacy Thayer-guess fixes each):**
+  - Replaced legacy `G1–G5624` guesses on non-NT words with their true `G5625+` Septuagint Strong's numbers (`15x κεκλωσμένης` `G2836 κοιλία` → `G6564 κλώθω`; `14x θεὲ` `G2316 θεός` → `G13032 θεε`; `9x εἲν` `G1487 εἰ` → `G7019 ιν`; `8x τετειχισμέναι` `G5088 τίκτω` → `G7038 τειχίζω`; `7x πεπονηρεῦσθαι` `G4189 πονηρία` → `G5858 πονηρεύομαι`; `4x διαπεπετασμένα` `G1310 διαφημίζω` → `G8886 διαπετάζω`; `3x νεμέσθωσαν` `G3500 νέκρωσις` → `G6136 νέμω`; `Eccl 4:6 δρακῶν` `G1404 δράκων` → `G6802 δράξ`; `Deut 21:6 νενευροκοπημένης` `G3510 νεφρός` → `G6304 νευροκοπέω`; etc.).
+- **All Three Modules — LXX Brenton+, SweteLXX+, and LXX Rahlfs+ (`68` / `66` / `63` Strong's fixes + `353` / `303` / `300` `l="lemma"` attribute fixes):**
+  - Fixed `20x ἕλος` ("marsh/reeds", `Exod 2:3`, etc.) from `G2247` (`ἧλος`, "nail") to `G13148` (`ἕλος`, "marsh").
+  - Fixed `Ezek 40 αἰλάμ` ("temple porch/vestibule") from `G5743` (`Ἐλάμ`, Elam) to `G9128` (`αἰλάμ`), and fixed `l="αιλαμ"` → `l="Ἐλάμ"` on true `G5743` Elam occurrences.
+  - Fixed `5x Ἀτὴρ` (`Ezra 2:16; Neh 7:21`, etc.) from `G817` (`ἄτερ`, "without") to `G13539` (`Ατηρ`).
+  - Repaired mismatched `l="lemma"` attributes across all three modules (`G393 l="ἀνατείνω"` → `l="ἀνατέλλω"`, `G1295 l="διασχίζω"` → `l="διασῴζω"`, `G2864 l="κώμη"` → `l="κόμη"`, `G2679 l="κατασιωπάω"` → `l="κατασκάπτω"`, `G576 l="ἀναβαίνω"` → `l="ἀποβαίνω"`, `G1996 l="ἐπάγω"` → `l="ἐπισυνάγω"`, `G4793 l="συγκόπτω"` → `l="συγκρίνω"`, `G4822 l="προβιβάζω"` → `l="συμβιβάζω"`, `G402 l="ἀναχάσκω"` → `l="ἀναχωρέω"`, etc.).
 
 Use with the Greek Bible Lexicon dictionary (https://github.com/SalitaNgDiyos/Greek-Bible-Lexicon).

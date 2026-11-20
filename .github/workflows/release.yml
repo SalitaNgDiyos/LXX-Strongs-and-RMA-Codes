@@ -22,7 +22,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           # Files added or changed in this push (the newest commit); on a manual run, the newest dated file of each module
-          CHANGED=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'modules/*.ot')
+          CHANGED=$(git diff --name-only --diff-filter=AMR HEAD~1 HEAD -- 'modules/*.ot')
           if [ -z "$CHANGED" ]; then
             for P in LXX_Brenton SweteLXX LXX_Rahlfs; do
               F=$(ls modules/${P}_*.ot 2>/dev/null | sort | tail -n 1); [ -n "$F" ] && CHANGED="$CHANGED"$'\n'"$F"
