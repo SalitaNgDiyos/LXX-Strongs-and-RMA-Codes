@@ -1,0 +1,29 @@
+# Licensing and Upstream Attribution
+
+## Original Compilation, Build, and Audit Scripts
+
+All original build, verification, and audit scripts in `tools/` (copyright © 2026 Edmund Paulino Valdez) are licensed under the **GNU Affero General Public License v3.0 or later (`AGPL-3.0-or-later`)**.
+
+## Incorporated Modules, Texts & Upstream Licenses
+
+The modules in `modules/` and `lxxmorph-rc.zip` compile and cross-reference multiple upstream biblical texts, morphological databases, and versification datasets. Each incorporated source retains its own license terms and distribution restrictions:
+
+1. **CATSS LXX Morphology (`lxxmorph-rc`) & `LXX Rahlfs+`**
+   - **Sources:** Center for Computer Analysis of Texts (CATSS / CCAT, University of Pennsylvania, directed by R. Kraft & E. Tov — Rahlfs 1935 morphologically analyzed Septuagint); `lxxmorph-rc` theWord module by **Rúbio Terra**; 249 missing verses filled from **`eliranwong/LXX-Rahlfs-1935`**.
+   - **License:** **CC BY-NC-SA 4.0** (`eliranwong/LXX-Rahlfs-1935`) and the **CCAT Non-Commercial User Agreement** (**non-commercial use only**).
+
+2. **`SweteLXX+` (H. B. Swete, 1909–1930)**
+   - **Sources:** H. B. Swete, *The Old Testament in Greek according to the Septuagint* (Cambridge, 1909–1930, public-domain text); digital text from **`eliranwong/LXX-Swete-1930`** (supplied by Pasquale Amicarelli) and **`sleeptillseven/LXX-Swete`** (First1KGreek-based); KJV versification mapping from **STEPBible TVTMS** (Tyndale House).
+   - **Licenses:** **GPL-3.0** (`eliranwong/LXX-Swete-1930`), **CC BY-NC-SA 4.0** (`sleeptillseven/LXX-Swete`, **non-commercial use only**), and **CC BY 4.0** (`STEPBible TVTMS`).
+
+3. **`LXX Brenton+` (Sir Lancelot C. L. Brenton, 1851/1879)**
+   - **Sources:** Sir Lancelot C. L. Brenton's Greek Septuagint and *An Historical Account of the Septuagint Version* (1879, public domain); foundational tagged Greek OT module by **Steve (`mathetes`)** on theWord forum; Brenton verse numbers & historical account from **communitychaplainfellowship.org**; morphology cross-checked against **CATSS / `lxxmorph-rc`** (Rúbio Terra, non-commercial); Strong's/Thayer numbering aligned with `GBL-EPV`.
+   - **License:** Public-domain Greek text; CATSS-derived morphological tagging subject to **CCAT non-commercial terms**.
+
+4. **`Packard's and Robinson's Morphological Analysis Codes` (`RMAC/PMAD`, `d5-mx`)**
+   - **Sources:** **Dr. Maurice A. Robinson** (Robinson's Morphological Analysis Codes — RMAC), **David W. Packard / CATSS** (Packard's Morphological Analysis Dictionary — PMAD), **Costas Stergiou** (`theWord`), **Rúbio Terra**, and 2026 canonical/deuterocanonical LXX code extensions by **Edmund Paulino Valdez**.
+   - **License:** Public-domain / free theWord community reference codes; CATSS/Packard codes subject to **CCAT non-commercial terms**.
+
+## Derivative Distribution Notice
+
+Because the compiled modules in this repository incorporate **CC BY-NC-SA 4.0** / CCAT non-commercial LXX-derived data, **GPL-3.0** Swete data, and **CC BY 4.0** versification data, any redistribution must preserve all upstream attributions, honor **NonCommercial** restrictions on the LXX-derived portions, and honor **ShareAlike** / **GPL-3.0** terms where applicable.
