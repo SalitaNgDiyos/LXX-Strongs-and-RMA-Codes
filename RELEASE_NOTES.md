@@ -1,8 +1,11 @@
-Updated **Packard's and Robinson's Morphological Analysis Codes** dictionary (`Packard_s_and_Robinson_s_Morphological_Analysis_Codes_dct_2026-11-20_2242.dct.twm`):
+LXX Strong's & Morphology Modules update (`2026-11-21_2015`):
 
-- **100% CATSS (Packard) & Robinson Morphology Coverage (`6,102` total entries):**
-  - Added **`1,736` Packard (CATSS)** morphology codes used across `LXX_Rahlfs+` and the Rahlfs Greek Deuterocanon (`V1–VZ` verb stem/conjugation classes, `N1–N3W` noun declension sub-types, `A1–A3U` adjective stem classes, plus crasis/compound tags `RP-VS`, `RP+X-NS`, `C+RD-GSM`, `C+X-`, `RD+N-GSM`, `RA+A-`, `RA+A-ASN`, `P+X-`).
-  - Added **`41` Robinson** morphology codes used across `LXX_Brenton+`, `SweteLXX+`, and the Swete/Brenton Greek Deuterocanon (comparative/superlative degrees, pluperfect, optative, vocative pronoun `P-2VS`, and crasis tags `C+RD-GSM`, `RA+A-APN`).
-  - Every Greek morphology tag across canonical and deuterocanonical **Brenton+**, **SweteLXX+**, and **LXX Rahlfs+** now resolves with `0` missing codes (`PRAGMA integrity_check = ok`).
+- **Attribution, copyright, and license compliance across all four modules:**
+  - **`LXX_Brenton_2026-11-21_2015.ot`**: Added explicit `copyright=` and `source=` metadata crediting Brenton (1851/1879, public domain), Steve (`mathetes`), `communitychaplainfellowship.org`, and CATSS / `lxxmorph-rc` (Rúbio Terra, non-commercial); updated companion dictionary reference to **`GBL-EPV`** (`The-Greek-Bible-English-Lexicons`).
+  - **`LXX_Rahlfs_2026-11-21_2015.ot`**: Added explicit `copyright=` metadata (CCAT non-commercial + `eliranwong/LXX-Rahlfs-1935` **CC BY-NC-SA 4.0**), credited **Rúbio Terra** (`lxxmorph-rc`), and updated companion dictionary reference to **`GBL-EPV`**.
+  - **`SweteLXX_2026-11-21_2015.ot`**: Updated companion dictionary reference to **`GBL-EPV`** and synchronized `version.date=2026-11-21` alongside existing **GPL-3.0** (`eliranwong/LXX-Swete-1930`), **CC BY-NC-SA 4.0** (`sleeptillseven/LXX-Swete`), and **CC BY 4.0** (`STEPBible TVTMS`) attributions.
+  - **`Packard_s_and_Robinson_s_Morphological_Analysis_Codes_dct_2026-11-21_2015.dct.twm`**: Updated `config.author` to credit both **Maurice A. Robinson** and **David W. Packard (CATSS)**, fixed the `offical` typo in `config.about`, added full credits (Costas Stergiou, Rúbio Terra, CATSS non-commercial notice, Edmund Valdez 2026 LXX/Deuterocanon extensions), and verified `PRAGMA integrity_check = ok`.
+- **Repository documentation & automated audit:**
+  - Added repository-root `LICENSE` (`AGPL-3.0-or-later` for `tools/` + full upstream dataset licenses), updated `README.md` with complete synchronized attributions, and added `tools/audit_lxx_repo.py` (`0` issues).
 
-Place `Packard_s_and_Robinson_s_Morphological_Analysis_Codes_dct_2026-11-20_2242.dct.twm` in your theWord `Modules` folder alongside the LXX `.ot` modules and the Greek Bible Lexicon dictionary (https://github.com/SalitaNgDiyos/Greek-Bible-Lexicon).
+Place the updated `.ot` and `.dct.twm` files in your theWord `Modules` folder alongside **`GBL-EPV`** (`SalitaNgDiyos/The-Greek-Bible-English-Lexicons`).
