@@ -18,6 +18,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 2
+      - name: Build, audit, and commit updated attribution modules if missing
+        run: |
+          if [ ! -f "modules/LXX_Brenton_2026-11-21_2015.ot" ]; then
+            python3 tools/apply_lxx_attribution_fix.py
+            python3 tools/audit_lxx_repo.py
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add modules/LXX_Brenton_2026-11-21_2015.ot modules/LXX_Rahlfs_2026-11-21_2015.ot modules/SweteLXX_2026-11-21_2015.ot modules/Packard_s_and_Robinson_s_Morphological_Analysis_Codes_dct_2026-11-21_2015.dct.twm
+            git commit -m "Apply LXX attribution, copyright, and GBL-EPV updates (2026-11-21_2015)"
+            git push origin HEAD:master
+          fi
       - name: Release the module files that were updated
         env:
           GH_TOKEN: ${{ github.token }}
@@ -39,4 +50,4 @@ jobs:
           gh release create "$TAG" $FILES \
             --title "LXX-Modules_$TAG" \
             --notes-file RELEASE_NOTES.md \
-            --target "$GITHUB_SHA"
+            --target "$(git rev-parse HEAD)"
